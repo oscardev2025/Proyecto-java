@@ -120,6 +120,10 @@ public class Tienda extends JFrame implements ActionListener {
         JMenuItem mntmModificarCamara = new JMenuItem("Modificar Camara");
         mntmModificarCamara.addActionListener(e -> {
 
+            modificarCamara dialogo = new modificarCamara(this);
+            dialogo.setModal(true);
+            dialogo.setVisible(true);
+
         });
         mnMantenimiento.add(mntmModificarCamara);
 
