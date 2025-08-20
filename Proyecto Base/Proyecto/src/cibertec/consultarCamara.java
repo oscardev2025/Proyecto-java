@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class consultarCamara extends JDialog {
 	
@@ -25,6 +26,7 @@ public class consultarCamara extends JDialog {
 	 * Create the dialog.
 	 */
 	public consultarCamara(Tienda tienda) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
 		this.tienda = tienda;
 		setTitle("Consultar camara");
 		setBounds(100, 100, 400, 200);

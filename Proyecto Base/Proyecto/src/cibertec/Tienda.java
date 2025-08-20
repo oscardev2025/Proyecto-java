@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.Toolkit;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Tienda extends JFrame implements ActionListener {
 
@@ -92,9 +95,10 @@ public class Tienda extends JFrame implements ActionListener {
      * Create the frame.
      */
     public Tienda() {
+    	setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
         setTitle("Tienda VisionGuard");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 662, 465);
+        setBounds(100, 100, 662, 501);
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
@@ -126,6 +130,18 @@ public class Tienda extends JFrame implements ActionListener {
 
         });
         mnMantenimiento.add(mntmModificarCamara);
+        
+        JMenuItem mntmNewMenuItem = new JMenuItem("Listar camaras");
+        mntmNewMenuItem.addActionListener(e -> {
+
+            listarCamaras dialogo = new listarCamaras(this);
+            dialogo.setModal(true);
+            dialogo.setVisible(true);
+
+        });
+        mnMantenimiento.add(mntmNewMenuItem);
+        
+
 
         JMenu mnVentas = new JMenu("Ventas");
         menuBar.add(mnVentas);
@@ -145,6 +161,13 @@ public class Tienda extends JFrame implements ActionListener {
         menuBar.add(mnAyuda);
 
         mnAyuda.add(new JMenuItem("Acerca de nuestra Tienda"));
+        getContentPane().setLayout(null);
+        
+        JLabel lblNewLabel = new JLabel("");
+        lblNewLabel.setEnabled(false);
+        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Oscar Dev\\Downloads\\VisionGuard-FONDO.png"));
+        lblNewLabel.setBounds(95, 0, 400, 413);
+        getContentPane().add(lblNewLabel);
     }
 
     public void actionPerformed(ActionEvent e) {

@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class modificarCamara extends JDialog {
 	
@@ -25,6 +26,7 @@ public class modificarCamara extends JDialog {
 	 * Create the dialog.
 	 */
 	public modificarCamara(Tienda tienda) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
 		this.tienda = tienda;
 		setTitle("Modificar camara");
 		setBounds(100, 100, 400, 200);
