@@ -13,6 +13,7 @@ import javax.swing.JMenuItem;
 import java.awt.Toolkit;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class Tienda extends JFrame implements ActionListener {
 
@@ -123,7 +124,6 @@ public class Tienda extends JFrame implements ActionListener {
 
         JMenuItem mntmModificarCamara = new JMenuItem("Modificar Camara");
         mntmModificarCamara.addActionListener(e -> {
-
             modificarCamara dialogo = new modificarCamara(this);
             dialogo.setModal(true);
             dialogo.setVisible(true);
@@ -133,20 +133,26 @@ public class Tienda extends JFrame implements ActionListener {
         
         JMenuItem mntmNewMenuItem = new JMenuItem("Listar camaras");
         mntmNewMenuItem.addActionListener(e -> {
-
             listarCamaras dialogo = new listarCamaras(this);
             dialogo.setModal(true);
             dialogo.setVisible(true);
-
         });
         mnMantenimiento.add(mntmNewMenuItem);
         
 
-
         JMenu mnVentas = new JMenu("Ventas");
         menuBar.add(mnVentas);
 
-        mnVentas.add(new JMenuItem("Vender"));
+        JMenuItem menuItem = new JMenuItem("Vender");
+        menuItem.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                vender dialogo = new vender(Tienda.this);
+                dialogo.setModal(true);
+                dialogo.setVisible(true);
+        	}
+        });
+        mnVentas.add(menuItem);
+        
         mnVentas.add(new JMenuItem("Generar reportes"));
 
         JMenu mnConfiguracion = new JMenu("Configuracion");
@@ -159,15 +165,24 @@ public class Tienda extends JFrame implements ActionListener {
 
         JMenu mnAyuda = new JMenu("Ayuda");
         menuBar.add(mnAyuda);
-
-        mnAyuda.add(new JMenuItem("Acerca de nuestra Tienda"));
+        
+        JMenuItem mntmNewMenuItem_1 = new JMenuItem("Acerca de Tienda");
+        mntmNewMenuItem_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                acercaTirnda dialogo = new acercaTirnda();
+                dialogo.setModal(true);
+                dialogo.setVisible(true);
+        	}
+        });
+        mnAyuda.add(mntmNewMenuItem_1);
         getContentPane().setLayout(null);
         
-        JLabel lblNewLabel = new JLabel("");
-        lblNewLabel.setEnabled(false);
-        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Oscar Dev\\Downloads\\VisionGuard-FONDO.png"));
-        lblNewLabel.setBounds(95, 0, 400, 413);
-        getContentPane().add(lblNewLabel);
+        JLabel lblNewLabel_1 = new JLabel("");
+        lblNewLabel_1.setEnabled(false);
+        lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Oscar Dev\\Downloads\\VisionGuard-FONDO.png"));
+        lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 50));
+        lblNewLabel_1.setBounds(77, 0, 405, 422);
+        getContentPane().add(lblNewLabel_1);
     }
 
     public void actionPerformed(ActionEvent e) {
