@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextPane;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class acercaTirnda extends JDialog {
 
@@ -32,7 +33,7 @@ public class acercaTirnda extends JDialog {
 	 * Create the dialog.
 	 */
 	public acercaTirnda() {
-		setTitle("Los pollitos dicen");
+		setTitle("Acerca de VisionGuard");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
@@ -48,16 +49,40 @@ public class acercaTirnda extends JDialog {
 			lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		}
 		
-		JTextPane txtpnIntegrantesOscarPerez = new JTextPane();
-		txtpnIntegrantesOscarPerez.setBounds(166, 95, 119, 74);
-		panel.add(txtpnIntegrantesOscarPerez);
-		txtpnIntegrantesOscarPerez.setEditable(false);
-		txtpnIntegrantesOscarPerez.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtpnIntegrantesOscarPerez.setText("Oscar Perez\r\nOliver Palermo\r\nSayut Ventura\r\nArturo Tineo");
+		JLabel lblIntegrantes = new JLabel("Integrantes:");
+		lblIntegrantes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntegrantes.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblIntegrantes.setBounds(113, 72, 208, 25);
+		panel.add(lblIntegrantes);
 		
-		JLabel lblNewLabel_1 = new JLabel("Integrantes:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_1.setBounds(166, 70, 92, 25);
-		panel.add(lblNewLabel_1);
+		JLabel lblIntegrantes_1 = new JLabel("Sayut Ventura Cruz");
+		lblIntegrantes_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntegrantes_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIntegrantes_1.setBounds(113, 107, 208, 25);
+		panel.add(lblIntegrantes_1);
+		
+		JLabel lblIntegrantes_2 = new JLabel("");
+		lblIntegrantes_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntegrantes_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIntegrantes_2.setBounds(113, 107, 208, 25);
+		panel.add(lblIntegrantes_2);
+		
+		JLabel lblIntegrantes_1_1 = new JLabel("Oscar Perez Alvarez");
+		lblIntegrantes_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntegrantes_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIntegrantes_1_1.setBounds(113, 133, 208, 25);
+		panel.add(lblIntegrantes_1_1);
+		
+		JLabel lblIntegrantes_1_1_1 = new JLabel("Oliver Palermo Trujillo");
+		lblIntegrantes_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntegrantes_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIntegrantes_1_1_1.setBounds(113, 159, 208, 25);
+		panel.add(lblIntegrantes_1_1_1);
+		
+		JLabel lblIntegrantes_1_1_1_1 = new JLabel("Arturo Camposano Tineo");
+		lblIntegrantes_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntegrantes_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIntegrantes_1_1_1_1.setBounds(113, 185, 208, 25);
+		panel.add(lblIntegrantes_1_1_1_1);
 	}
 }

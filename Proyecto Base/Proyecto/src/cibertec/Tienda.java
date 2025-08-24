@@ -166,7 +166,7 @@ public class Tienda extends JFrame implements ActionListener {
         JMenu mnAyuda = new JMenu("Ayuda");
         menuBar.add(mnAyuda);
         
-        JMenuItem mntmNewMenuItem_1 = new JMenuItem("Acerca de Tienda");
+        JMenuItem mntmNewMenuItem_1 = new JMenuItem("Acerca de VisionGuard");
         mntmNewMenuItem_1.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
                 acercaTirnda dialogo = new acercaTirnda();
@@ -181,7 +181,7 @@ public class Tienda extends JFrame implements ActionListener {
         lblNewLabel_1.setEnabled(false);
         lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Oscar Dev\\Downloads\\VisionGuard-FONDO.png"));
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 50));
-        lblNewLabel_1.setBounds(77, 0, 405, 422);
+        lblNewLabel_1.setBounds(106, 10, 423, 412);
         getContentPane().add(lblNewLabel_1);
     }
 

@@ -30,7 +30,7 @@ public class vender extends JDialog {
 	public vender(Tienda tienda) {
 		setTitle("Vender");
 		this.tienda = tienda;
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 325);
 		getContentPane().setLayout(null);
 		{
 			JLabel lblNewLabel = new JLabel("Modelo:");
@@ -89,19 +89,28 @@ public class vender extends JDialog {
 		getContentPane().add(textCantidad);
 
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 88, 416, 165);
+		textArea.setBounds(10, 88, 416, 200);
 		getContentPane().add(textArea);
+		
 		
 		JButton btnNewButton = new JButton("Vender");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String modelo = (String) comboBox.getSelectedItem();
 				double precio =  Double.parseDouble(txtPrecio.getText());
 				int cantidad = Integer.parseInt(textCantidad.getText());
-				
-				double total = precio * cantidad;
-				textArea.setText("Precio unitario: " + precio 
-                        + "\nCantidad: " + cantidad 
-                        + "\nTotal: " + total);
+				double importeCompra = precio * cantidad;
+				double descuento = importeDescuento(cantidad);
+				double total = importeCompra - descuento;
+				String obsequio = calcularObsequio(cantidad);
+				textArea.setText("BOLETA DE VENTA\n" + 
+				"\nModelo: " + modelo +
+				"\nPrecio unitario: " + precio +
+				"\nCantidad: " + cantidad +
+				"\nImporte Compra (S/): " + importeCompra + 
+				"\nImporte Descuento (S/): " + descuento +
+				"\nTotal: " + total +
+				"\nObsequio: " + obsequio);
 			}
 		});
 		btnNewButton.setBounds(287, 20, 85, 21);
@@ -115,5 +124,25 @@ public class vender extends JDialog {
 		});
 		btnCerrar.setBounds(287, 47, 85, 21);
 		getContentPane().add(btnCerrar);
+	}
+	public static double importeDescuento(int cantidad) {
+		if (cantidad < 5) {
+			return 0.1 * cantidad;
+		} else if (cantidad <= 11) {
+			return 0.2 * cantidad;
+		} else if (cantidad <=15) {
+			return 0.3 * cantidad;
+		} else {
+			return 0.4 * cantidad;
+		}
+	}
+	public static String calcularObsequio(int cantidad) {
+		if (cantidad < 2) {
+			return "Obsequio1";
+		} else if (cantidad <= 6) {
+			return "Obsequio2";
+		} else {
+			return "Obsequio3";
+		}
 	}
 }
