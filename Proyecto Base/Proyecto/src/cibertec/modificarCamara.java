@@ -22,6 +22,16 @@ public class modificarCamara extends JDialog {
 	private JTextField txtFondo;
 	private Tienda tienda;
 
+	 public static void main(String[] args) {
+		    try {
+		        Tienda miTienda = new Tienda();
+		        modificarCamara dialog = new modificarCamara(miTienda);
+		        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		        dialog.setVisible(true);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		}
 	/**
 	 * Create the dialog.
 	 */
@@ -131,7 +141,6 @@ public class modificarCamara extends JDialog {
 					tienda.alto5 = nuevoAlto;
 					tienda.fondo5 = nuevoFondo;
 				}
-				dispose();
 			}
 		});
 		btnGuardar.setBounds(288, 47, 85, 21);

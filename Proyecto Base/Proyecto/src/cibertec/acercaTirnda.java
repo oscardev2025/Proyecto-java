@@ -11,6 +11,7 @@ import java.awt.Font;
 import javax.swing.JTextPane;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class acercaTirnda extends JDialog {
 
@@ -33,6 +34,7 @@ public class acercaTirnda extends JDialog {
 	 * Create the dialog.
 	 */
 	public acercaTirnda() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
 		setTitle("Acerca de VisionGuard");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);

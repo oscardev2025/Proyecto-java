@@ -17,6 +17,17 @@ public class listarCamaras extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private Tienda tienda;
 
+	 public static void main(String[] args) {
+		    try {
+		        Tienda miTienda = new Tienda();
+		        listarCamaras dialog = new listarCamaras(miTienda);
+		        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		        dialog.setVisible(true);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		}
+	
 	/**
 	 * Create the dialog.
 	 */
@@ -39,6 +50,7 @@ public class listarCamaras extends JDialog {
 		getContentPane().add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
 		
 		btnNewButton.setBounds(117, 332, 85, 21);
