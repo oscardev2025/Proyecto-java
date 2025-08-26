@@ -23,20 +23,6 @@ public class vender extends JDialog {
 	private JTextField textCantidad;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-	    try {
-	        Tienda miTienda = new Tienda();
-	        vender dialog = new vender(miTienda);
-	        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-	        dialog.setVisible(true);
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	}
-
-	/**
 	 * Create the dialog.
 	 */
 	public vender(Tienda tienda) {
@@ -145,27 +131,30 @@ public class vender extends JDialog {
 		getContentPane().add(btnCerrar);
 	}
 	
-	public static double importeDescuento(int cantidad, double precioUnitario) {
+	
+	public double importeDescuento(int cantidad, double precioUnitario) {
 	    double porcentaje;
 	    if (cantidad < 5) {
-	        porcentaje = 0.1;
+	        porcentaje = tienda.porcentaje1;
 	    } else if (cantidad <= 11) {
-	        porcentaje = 0.2;
+	        porcentaje = tienda.porcentaje2;
 	    } else if (cantidad <= 15) {
-	        porcentaje = 0.3;
+	        porcentaje = tienda.porcentaje3;
 	    } else {
-	        porcentaje = 0.4;
+	        porcentaje = tienda.porcentaje4;
 	    }
 	    return cantidad * precioUnitario * porcentaje;
 	}
 	
-	public static String calcularObsequio(int cantidad) {
+	
+	
+	public String calcularObsequio(int cantidad) {
 		if (cantidad < 2) {
-			return "Obsequio1";
+			return "Calendario de la tienda";
 		} else if (cantidad <= 6) {
-			return "Obsequio2";
+			return "Funda para camara";
 		} else {
-			return "Obsequio3";
+			return "Kit de limpieza";
 		}
 	}
 }

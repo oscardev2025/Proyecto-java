@@ -51,7 +51,7 @@ public class acercaTirnda extends JDialog {
 			lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		}
 		
-		JLabel lblIntegrantes = new JLabel("Integrantes:");
+		JLabel lblIntegrantes = new JLabel("Autores:");
 		lblIntegrantes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIntegrantes.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblIntegrantes.setBounds(113, 72, 208, 25);
