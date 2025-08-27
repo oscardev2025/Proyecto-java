@@ -16,19 +16,9 @@ import java.awt.Toolkit;
 public class avanceVentas extends JDialog {
 	 private Tienda tienda;
 
-
-	 public static void main(String[] args) {
-		    try {
-		        Tienda miTienda = new Tienda();
-		        avanceVentas dialog = new avanceVentas(miTienda);
-		        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		        dialog.setVisible(true);
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
-		}
 	
-	public avanceVentas(Tienda tienda) {
+	public avanceVentas(JDialog parent, Tienda tienda) {
+		super(parent, true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
 		this.tienda = tienda;
 		setTitle("Avance de ventas");

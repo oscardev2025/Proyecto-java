@@ -65,6 +65,8 @@ public class Tienda extends JFrame implements ActionListener {
     public String obsequio1 = "Calendario";
     public String obsequio2 = "Funda para camara";
     public String obsequio3 = "Memoria Micro-SD";
+    // contador de ventas
+    public int contadorVentas = 0;
 
     /**
      * Launch the application. CRUD
@@ -153,8 +155,6 @@ public class Tienda extends JFrame implements ActionListener {
 
         mnConfiguracion.add(new JMenuItem("Configurar descuentos"));
         mnConfiguracion.add(new JMenuItem("Configurar Obsequios"));
-        mnConfiguracion.add(new JMenuItem("Configurar cantidad optima"));
-        mnConfiguracion.add(new JMenuItem("Configurar cuota diaria"));
 
         JMenu mnAyuda = new JMenu("Ayuda");
         menuBar.add(mnAyuda);
@@ -177,6 +177,7 @@ public class Tienda extends JFrame implements ActionListener {
         lblNewLabel_1.setBounds(106, 10, 423, 412);
         getContentPane().add(lblNewLabel_1);
     }
+
 
     public void actionPerformed(ActionEvent e) {
 

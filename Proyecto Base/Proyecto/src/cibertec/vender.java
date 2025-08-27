@@ -115,6 +115,13 @@ public class vender extends JDialog {
 				"\nImporte Descuento (S/): " + String.format("%.2f", descuento) +
 				"\nTotal: " + total +
 				"\nObsequio: " + obsequio);
+				tienda.contadorVentas++;
+				textArea.append("\nEl contador tiene " + tienda.contadorVentas);
+
+				if (tienda.contadorVentas % 5 == 0) {
+					avanceVentas ventana = new avanceVentas(vender.this, tienda);
+					ventana.setVisible(true);
+				}
 			}
 		});
 		btnNewButton.setBounds(287, 20, 85, 21);
