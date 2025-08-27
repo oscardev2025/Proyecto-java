@@ -19,7 +19,7 @@ public class Tienda extends JFrame implements ActionListener {
 
     // Datos primera cámara
     public String modelo1 = "DS-2CE19H0T-AIT3ZF";
-    public double precio1 = 28.10;
+    public double precio1 = 281.0;
     public double ancho1 = 22.0;
     public double alto1 = 35.34;
     public double fondo1 = 22.0;
@@ -53,28 +53,21 @@ public class Tienda extends JFrame implements ActionListener {
     public double fondo5 = 10.5;
 
     // Porcentajes de descuento
-    public double porcentaje1 = 7.5;
-    public double porcentaje2 = 10.0;
-    public double porcentaje3 = 12.5;
-    public double porcentaje4 = 15.0;
+    public double porcentaje1 = 0.075;
+    public double porcentaje2 = 0.10;
+    public double porcentaje3 = 0.125;
+    public double porcentaje4 = 0.150;
 
     // Cantidad óptima de cámaras vendidas
     public int cantidadOptima = 10;
 
-    // Cantidad mínima para obsequio
-    public int cantidadMinimaObsequiable = 3;
-
-    // Obsequio por cantidad mínima
-    public String obsequio = "USB";
-
-    // Número de cliente con premio sorpresa
-    public int numeroClienteSorpresa = 5;
-
-    // Premio sorpresa
-    public String premioSorpresa = "Un polo";
+    // Obsequios
+    public String obsequio1 = "Calendario";
+    public String obsequio2 = "Funda para camara";
+    public String obsequio3 = "Memoria Micro-SD";
 
     /**
-     * Launch the application.
+     * Launch the application. CRUD
      */
     public static void main(String[] args) {
         try {

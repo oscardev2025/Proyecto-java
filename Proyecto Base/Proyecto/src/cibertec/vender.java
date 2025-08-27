@@ -147,14 +147,13 @@ public class vender extends JDialog {
 	}
 	
 	
-	
 	public String calcularObsequio(int cantidad) {
 		if (cantidad < 2) {
-			return "Calendario de la tienda";
+			return tienda.obsequio1;
 		} else if (cantidad <= 6) {
-			return "Funda para camara";
+			return tienda.obsequio2;
 		} else {
-			return "Kit de limpieza";
+			return tienda.obsequio3;
 		}
 	}
 }
