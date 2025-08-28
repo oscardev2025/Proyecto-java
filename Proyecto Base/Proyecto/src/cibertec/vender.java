@@ -126,7 +126,7 @@ public class vender extends JDialog {
 		});
 		btnNewButton.setBounds(287, 20, 85, 21);
 		getContentPane().add(btnNewButton);
-		
+
 		JButton btnCerrar = new JButton("Cerrar");
 		btnCerrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCerrar.addActionListener(new ActionListener() {
@@ -137,7 +137,6 @@ public class vender extends JDialog {
 		btnCerrar.setBounds(287, 47, 85, 21);
 		getContentPane().add(btnCerrar);
 	}
-	
 	
 	public double importeDescuento(int cantidad, double precioUnitario) {
 	    double porcentaje;

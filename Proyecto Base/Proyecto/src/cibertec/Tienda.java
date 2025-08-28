@@ -143,8 +143,6 @@ public class Tienda extends JFrame implements ActionListener {
         	}
         });
         mnVentas.add(menuItem);
-        
-        mnVentas.add(new JMenuItem("Generar reportes"));
 
         JMenu mnConfiguracion = new JMenu("Configuracion");
         menuBar.add(mnConfiguracion);
@@ -157,7 +155,14 @@ public class Tienda extends JFrame implements ActionListener {
         	}
         });
         mnConfiguracion.add(menuItem_1);
-        mnConfiguracion.add(new JMenuItem("Configurar Obsequios"));
+        JMenuItem menuItem_2 = new JMenuItem("Configurar Obsequios");
+        menuItem_2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                modificarObsequio dialogo = new modificarObsequio(Tienda.this);
+                dialogo.setVisible(true);
+        	}
+        });
+        mnConfiguracion.add(menuItem_2);
 
         JMenu mnAyuda = new JMenu("Ayuda");
         menuBar.add(mnAyuda);

@@ -99,7 +99,7 @@ public class consultarCamara extends JDialog {
 		});
 		btnNewButton.setBounds(288, 24, 85, 21);
 		contentPanel.add(btnNewButton);
-
+		
 		listaCamaras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int index = listaCamaras.getSelectedIndex();
