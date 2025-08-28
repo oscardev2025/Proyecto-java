@@ -112,7 +112,6 @@ public class Tienda extends JFrame implements ActionListener {
         JMenuItem mntmConsultarCamara = new JMenuItem("Consultar camara");
         mntmConsultarCamara.addActionListener(e -> {
             consultarCamara dialogo = new consultarCamara(this);
-            dialogo.setModal(true);
             dialogo.setVisible(true);
         });
         mnMantenimiento.add(mntmConsultarCamara);
@@ -120,7 +119,6 @@ public class Tienda extends JFrame implements ActionListener {
         JMenuItem mntmModificarCamara = new JMenuItem("Modificar Camara");
         mntmModificarCamara.addActionListener(e -> {
             modificarCamara dialogo = new modificarCamara(this);
-            dialogo.setModal(true);
             dialogo.setVisible(true);
 
         });
@@ -129,7 +127,6 @@ public class Tienda extends JFrame implements ActionListener {
         JMenuItem mntmNewMenuItem = new JMenuItem("Listar camaras");
         mntmNewMenuItem.addActionListener(e -> {
             listarCamaras dialogo = new listarCamaras(this);
-            dialogo.setModal(true);
             dialogo.setVisible(true);
         });
         mnMantenimiento.add(mntmNewMenuItem);
@@ -142,7 +139,6 @@ public class Tienda extends JFrame implements ActionListener {
         menuItem.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
                 vender dialogo = new vender(Tienda.this);
-                dialogo.setModal(true);
                 dialogo.setVisible(true);
         	}
         });
@@ -153,7 +149,14 @@ public class Tienda extends JFrame implements ActionListener {
         JMenu mnConfiguracion = new JMenu("Configuracion");
         menuBar.add(mnConfiguracion);
 
-        mnConfiguracion.add(new JMenuItem("Configurar descuentos"));
+        JMenuItem menuItem_1 = new JMenuItem("Configurar descuentos");
+        menuItem_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                modificarDescuento dialogo = new modificarDescuento(Tienda.this);
+                dialogo.setVisible(true);
+        	}
+        });
+        mnConfiguracion.add(menuItem_1);
         mnConfiguracion.add(new JMenuItem("Configurar Obsequios"));
 
         JMenu mnAyuda = new JMenu("Ayuda");
@@ -163,7 +166,6 @@ public class Tienda extends JFrame implements ActionListener {
         mntmNewMenuItem_1.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
                 acercaTirnda dialogo = new acercaTirnda();
-                dialogo.setModal(true);
                 dialogo.setVisible(true);
         	}
         });
@@ -171,10 +173,9 @@ public class Tienda extends JFrame implements ActionListener {
         getContentPane().setLayout(null);
         
         JLabel lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setEnabled(false);
-        lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Oscar Dev\\Downloads\\VisionGuard-FONDO.png"));
+        lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Oscar Dev\\Pictures\\img1.jpg"));
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 50));
-        lblNewLabel_1.setBounds(106, 10, 423, 412);
+        lblNewLabel_1.setBounds(10, 10, 638, 412);
         getContentPane().add(lblNewLabel_1);
     }
 

@@ -14,11 +14,10 @@ import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
 public class avanceVentas extends JDialog {
-	 private Tienda tienda;
+	 private Tienda tienda; 
 
 	
-	public avanceVentas(JDialog parent, Tienda tienda) {
-		super(parent, true);
+	public avanceVentas(Tienda tienda) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
 		this.tienda = tienda;
 		setTitle("Avance de ventas");
@@ -55,4 +54,5 @@ public class avanceVentas extends JDialog {
 		btnNewButton.setBounds(133, 92, 90, 21);
 		getContentPane().add(btnNewButton);
 	}
+
 }

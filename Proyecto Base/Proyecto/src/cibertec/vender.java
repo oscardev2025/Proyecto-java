@@ -119,7 +119,7 @@ public class vender extends JDialog {
 				textArea.append("\nEl contador tiene " + tienda.contadorVentas);
 
 				if (tienda.contadorVentas % 5 == 0) {
-					avanceVentas ventana = new avanceVentas(vender.this, tienda);
+					avanceVentas ventana = new avanceVentas(tienda);
 					ventana.setVisible(true);
 				}
 			}
