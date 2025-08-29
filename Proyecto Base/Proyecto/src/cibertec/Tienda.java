@@ -23,50 +23,43 @@ public class Tienda extends JFrame implements ActionListener {
     public double ancho1 = 22.0;
     public double alto1 = 35.34;
     public double fondo1 = 22.0;
-
     // Datos segunda cámara
     public String modelo2 = "DS-2CE79H0T-VFIT3F";
     public double precio2 = 644.0;
     public double ancho2 = 8.5;
     public double alto2 = 92.0;
     public double fondo2 = 25.5;
-
     // Datos tercera cámara
     public String modelo3 = "DS-2CD2T45G0P-I";
     public double precio3 = 2041.0;
     public double ancho3 = 10.5;
     public double alto3 = 16.0;
     public double fondo3 = 10.5;
-
     // Datos cuarta cámara
     public String modelo4 = "NHC-IF20T";
     public double precio4 = 172.69;
     public double ancho4 = 10.9;
     public double alto4 = 10.9;
     public double fondo4 = 9.4;
-
     // Datos quinta cámara
     public String modelo5 = "DS-2CD2683G2";
     public double precio5 = 2059.0;
     public double ancho5 = 10.5;
     public double alto5 = 27.0;
     public double fondo5 = 10.5;
-
     // Porcentajes de descuento
     public double porcentaje1 = 0.075;
     public double porcentaje2 = 0.10;
     public double porcentaje3 = 0.125;
     public double porcentaje4 = 0.150;
-
-    // Cantidad óptima de cámaras vendidas
-    public int cantidadOptima = 10;
-
     // Obsequios
     public String obsequio1 = "Calendario";
     public String obsequio2 = "Funda para camara";
     public String obsequio3 = "Memoria Micro-SD";
     // contador de ventas
     public int contadorVentas = 0;
+    //contador de avances
+    public int avancesVentas = 0;
 
     /**
      * Launch the application. CRUD
@@ -120,7 +113,6 @@ public class Tienda extends JFrame implements ActionListener {
         mntmModificarCamara.addActionListener(e -> {
             modificarCamara dialogo = new modificarCamara(this);
             dialogo.setVisible(true);
-
         });
         mnMantenimiento.add(mntmModificarCamara);
         

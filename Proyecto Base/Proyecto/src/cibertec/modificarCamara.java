@@ -64,15 +64,15 @@ public class modificarCamara extends JDialog {
 		JLabel lblFondocm = new JLabel("Fondo (cm)");
 		lblFondocm.setBounds(21, 120, 69, 13);
 		contentPanel.add(lblFondocm);
-
+		// el 
 		JComboBox<String> listaCamaras = new JComboBox<>();
 		listaCamaras.setModel(new DefaultComboBoxModel<>(new String[] {
-			"Elija una camara",
-			tienda.modelo1,
-			tienda.modelo2,
-			tienda.modelo3,
-			tienda.modelo4,
-			tienda.modelo5
+			"Elija una camara", //indice 0 
+			tienda.modelo1, //indice 1
+			tienda.modelo2, //indice 2
+			tienda.modelo3, //indice 3 
+			tienda.modelo4, //indice 4
+			tienda.modelo5  //indice 5
 		}));
 		listaCamaras.setBounds(100, 24, 130, 21);
 		contentPanel.add(listaCamaras);
@@ -91,7 +91,7 @@ public class modificarCamara extends JDialog {
 		txtAlto.setColumns(10);
 		txtAlto.setBounds(100, 94, 130, 19);
 		contentPanel.add(txtAlto);
-
+		
 		txtFondo = new JTextField();
 		txtFondo.setColumns(10);
 		txtFondo.setBounds(100, 117, 130, 19);

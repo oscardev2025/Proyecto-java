@@ -16,12 +16,22 @@ import java.awt.Toolkit;
 public class avanceVentas extends JDialog {
 	 private Tienda tienda; 
 
-	
+	 public static void main(String[] args) {
+		    try {
+		        Tienda miTienda = new Tienda();
+		        avanceVentas dialog = new avanceVentas(miTienda);
+		        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		        dialog.setVisible(true);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		}
+	 
 	public avanceVentas(Tienda tienda) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Oscar Dev\\Downloads\\LogoVG.png"));
 		this.tienda = tienda;
 		setTitle("Avance de ventas");
-		setBounds(100, 100, 350, 170);
+		setBounds(100, 100, 390, 170);
 		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
@@ -34,14 +44,14 @@ public class avanceVentas extends JDialog {
 		lblNewLabel_1.setBounds(85, 23, 81, 13);
 		getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Importe total general acumulado (S/):");
+		JLabel lblNewLabel_1_1 = new JLabel("Importe total general acumulado (S/): " + String.format("%.2f", (double) tienda.avancesVentas));
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1_1.setBounds(85, 46, 260, 13);
+		lblNewLabel_1_1.setBounds(85, 46, 281, 13);
 		getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Porcentaje de la cuota diaria:");
+		JLabel lblNewLabel_1_2 = new JLabel("Porcentaje de la cuota diaria: " + String.format("%.2f", (double) calcularPorcentaje(tienda.avancesVentas)) + "%");
 		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1_2.setBounds(85, 69, 241, 13);
+		lblNewLabel_1_2.setBounds(85, 69, 260, 13);
 		getContentPane().add(lblNewLabel_1_2);
 		
 		JButton btnNewButton = new JButton("Aceptar");
@@ -54,5 +64,8 @@ public class avanceVentas extends JDialog {
 		btnNewButton.setBounds(133, 92, 90, 21);
 		getContentPane().add(btnNewButton);
 	}
-
+    public static double calcularPorcentaje(double monto) {
+        double cuotaDiaria = 5000;
+        return (monto / cuotaDiaria) * 100;
+    }
 }

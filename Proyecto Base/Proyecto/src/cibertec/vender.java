@@ -22,6 +22,16 @@ public class vender extends JDialog {
 	private JTextField txtPrecio;
 	private JTextField textCantidad;
 
+	 public static void main(String[] args) {
+		    try {
+		        Tienda miTienda = new Tienda();
+		        vender dialog = new vender (miTienda);
+		        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		        dialog.setVisible(true);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		}
 	/**
 	 * Create the dialog.
 	 */
@@ -109,14 +119,16 @@ public class vender extends JDialog {
 				String obsequio = calcularObsequio(cantidad);
 				textArea.setText("BOLETA DE VENTA\n" + 
 				"\nModelo: " + modelo +
-				"\nPrecio unitario: " + precio +
+				"\nPrecio unitario: " + String.format("%.2f",precio) +
 				"\nCantidad: " + cantidad +
-				"\nImporte Compra (S/): " + importeCompra + 
+				"\nImporte Compra (S/): " + String.format("%.2f",importeCompra) + 
 				"\nImporte Descuento (S/): " + String.format("%.2f", descuento) +
-				"\nTotal: " + total +
+				"\nTotal: " + String.format("%.2f",total) +
 				"\nObsequio: " + obsequio);
 				tienda.contadorVentas++;
 				textArea.append("\nEl contador tiene " + tienda.contadorVentas);
+				
+				tienda.avancesVentas += total;
 
 				if (tienda.contadorVentas % 5 == 0) {
 					avanceVentas ventana = new avanceVentas(tienda);
