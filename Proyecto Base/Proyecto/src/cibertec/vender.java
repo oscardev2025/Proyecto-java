@@ -84,7 +84,6 @@ public class vender extends JDialog {
 				tienda.modelo4,
 				tienda.modelo5}
 		));
-		
 		comboBox.setToolTipText("");
 		comboBox.setBounds(101, 20, 120, 17);
 		getContentPane().add(comboBox);
